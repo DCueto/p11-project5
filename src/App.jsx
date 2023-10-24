@@ -1,14 +1,23 @@
 import { useState } from 'react'
+import './reset.css'
 import './App.css'
 
+import 'typeface-roboto';
+import 'typeface-roboto-condensed';
+
+import Header from './components/Header.jsx';
+import Content from './components/Content.jsx';
+import Footer from './components/Footer';
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-
+      <Header />
+      <Content />
+      <Footer />
     </>
   )
 }
 
-export default App
+export default App;
