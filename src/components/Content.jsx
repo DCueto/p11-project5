@@ -7,7 +7,6 @@ import ListProducts from './ListProducts.jsx';
 
 export default function Content(){
 
-
   return (
 
   <main id="main-container">
@@ -15,7 +14,7 @@ export default function Content(){
       <img className="banner" src={banner} />
     </section>
 
-    <ListProducts />
+    <ListProducts urlFetch="http://localhost:3002/articles" />
   </main>
 
   );

@@ -1,33 +1,64 @@
+import { useEffect, useState } from 'react';
 
 import './ListProducts.css';
 
-import productImg from "./../assets/img/product.jpeg"
+
+export default function ListProducts({urlFetch}){
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [dataPosts, setDataPosts] = useState(null);
+ 
+  useEffect( () => {
+    async function fetchData(URL){
+      try{
+        const request = await fetch(URL);
+        const response = await request.json();
+
+        // SORT ARRAY BY RATE VALUE
+        let sortedArray = response.sort(
+          (i1, i2) => (i1.rate < i2.rate) ? 1 : (i1.rate > i2.rate) ? -1 : 0
+        );
+        
+        // Set 5th first items of sortedArray as data to use
+        setDataPosts(sortedArray.slice(0, 4));
+        setIsLoading(false);
+      } catch(error) {
+        console.log(error);
+      }
+    }
+
+    fetchData(urlFetch);
+  }, []);
 
 
-
-
-export default function ListProducts(){
-
-  let items = [1, 2, 3, 4];
-
-  let listItems = items.map(item =>
-    <article className="list-products-item">
-      <figure className='list-products-item-img'>
-        <img src={productImg} />
-        <span className='price-tag'>1599,99€</span>
-      </figure>
-      <div className="list-products-item-info">
-        <p className='list-products-item-info-brand'>ROCKRIDER</p>
-        <p className='list-products-item-info-model'>Bicicleta de montaña 275" aluminio Rockrider ST 100 gris</p>
+  
+  if(isLoading){
+    return (
+      <div className="loading">
+        <h1>LOADING...</h1>
       </div>
-    </article>
-  );
+    )
+  }
 
   return (
     <section className="list-products top-products">
       <h2>Productos destacados</h2>
       <div className="list-products-content">
-        {listItems}
+      {
+        dataPosts.map( item =>
+          <article className="list-products-item" key={item.id}>
+            <figure className='list-products-item-img'>
+              <img src={item.poster_img} />
+              <span className='price-tag'>{item.price}€</span>
+            </figure>
+            <div className="list-products-item-info">
+              <p className='list-products-item-info-brand'>{item.brand}</p>
+              <p className='list-products-item-info-model'>{item.name}</p>
+            </div>
+          </article>
+
+        )
+      }
       </div>
     </section>
   );

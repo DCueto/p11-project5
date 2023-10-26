@@ -1,0 +1,13 @@
+/* FOOTER - SPAN LINKS */
+
+footer .span-links{
+  display: flex;
+  justify-content: center;
+  color: #868686;
+  font-size: 12px;
+}
+
+footer .span-links a{
+  text-decoration: none;
+  color: #868686;
+}
