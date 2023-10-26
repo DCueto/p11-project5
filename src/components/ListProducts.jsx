@@ -14,13 +14,11 @@ export default function ListProducts({urlFetch}){
         const request = await fetch(URL);
         const response = await request.json();
 
-        // SORT ARRAY BY RATE VALUE
-        let sortedArray = response.sort(
+        let popularItems = response.sort(
           (i1, i2) => (i1.rate < i2.rate) ? 1 : (i1.rate > i2.rate) ? -1 : 0
         );
-        
-        // Set 5th first items of sortedArray as data to use
-        setDataPosts(sortedArray.slice(0, 4));
+
+        setDataPosts(popularItems.slice(0, 4));
         setIsLoading(false);
       } catch(error) {
         console.log(error);

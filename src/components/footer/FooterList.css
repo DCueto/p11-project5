@@ -1,0 +1,33 @@
+/* FOOTER LIST */
+
+.footer-list{
+  font-size: 1.1rem;
+}
+
+.footer-list .footer-list-h{
+  font-size: 1.458rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #1D2A33;
+  margin-bottom: 17px;
+}
+
+.footer-list a{
+  color: var(--light-gray-span-color);
+}
+
+.footer-list i{
+  font-size: 26px;
+  color: #393939;
+}
+
+.footer-list ul li{
+  font-size: 1.2rem;
+  margin: 7px 0;
+}
+
+footer .footer-list ul li a{
+  text-decoration: none;
+  color: var(--light-gray-span-color);
+  letter-spacing: 0.2px;
+}

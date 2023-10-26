@@ -33,6 +33,36 @@ footer{
 
 
 
+/* SOCIAL ITEMS FOOTER */
+
+.footer-list .social-items{
+  display: flex;
+  gap: 25px;
+}
+
+.social-items .social-item{
+  font-size: 13.5px;
+  font-family: 'Roboto Condensed';;
+  letter-spacing: 0.2px;
+}
+
+.footer-list .social-items a{
+  text-decoration: none;
+}
+
+.footer-list .social-items img{
+  width: 128px;
+}
+
+.footer-list .social-item a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
 /* TERMS DIV */
 
 .main-footer .terms{

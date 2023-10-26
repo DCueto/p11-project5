@@ -1,0 +1,21 @@
+/* ASK ANYTHING LIST */
+
+.main-footer div#ask-anything-footer{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.main-footer #ask-anything-footer > div p{
+  color: var(--light-gray-span-color);
+  margin-bottom: 4px;
+  font-family: 'Roboto Condensed';
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+}
+
+.main-footer #ask-anything-footer > div a{
+  color: var(--blue-link-color);
+  font-weight: 600;
+  font-size: 14px;
+}

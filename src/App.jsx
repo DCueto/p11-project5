@@ -5,9 +5,9 @@ import './App.css'
 import 'typeface-roboto';
 import 'typeface-roboto-condensed';
 
-import Header from './components/Header.jsx';
+import Header from './components/header/Header.jsx';
 import Content from './components/Content.jsx';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 
 function App() {
 

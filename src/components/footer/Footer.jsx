@@ -1,8 +1,12 @@
-import lemonway from './../assets/img/lemonway-logo.svg';
+import lemonway from './../../assets/img/lemonway-logo.svg';
 
 import './Footer.css';
 
 import FooterList from './FooterList';
+import FooterAskAnything from './FooterAskAnything';
+import FooterDownloadApp from './FooterDownloadApp';
+import FooterSocialNetworks from './FooterSocialNetworks';
+import FooterPartner from './FooterPartner';
 import SpanList from './SpanList';
 
 export default function Footer(){
@@ -114,17 +118,17 @@ export default function Footer(){
   return (
     <footer className="main-footer">
       <div className="top-lists">
-        <FooterList type="footer-links" title="DECATHLON EMPRESA" content={footerLinks1}></FooterList>
-        <FooterList type="footer-links" title="COMPRA" content={footerLinks2}></FooterList>
-        <FooterList type="footer-links" title="POST-COMPRA" content={footerLinks3}></FooterList>
-        <FooterList type="footer-links" title="SERVICIOS" content={footerLinks4}></FooterList>
-        <FooterList type="footer-links" title="VENTAJAS" content={footerLinks5}></FooterList>
+        <FooterList title="DECATHLON EMPRESA" content={footerLinks1}></FooterList>
+        <FooterList title="COMPRA" content={footerLinks2}></FooterList>
+        <FooterList title="POST-COMPRA" content={footerLinks3}></FooterList>
+        <FooterList title="SERVICIOS" content={footerLinks4}></FooterList>
+        <FooterList title="VENTAJAS" content={footerLinks5}></FooterList>
       </div>
       <div className="bottom-lists">
-        <FooterList type="ask-anything" title="PREGÚNTANOS LO QUE QUIERAS" content={ask} id="ask-anything-footer"></FooterList>
-        <FooterList type="download-app" title="APP DECATHLON" content={download} ></FooterList>
-        <FooterList type="social-items" title="REDES SOCIALES" content={socialNetworks} ></FooterList>
-        <FooterList type="partner" title="PARTNER" content={lemonway}></FooterList>
+        <FooterAskAnything title="PREGÚNTANOS LO QUE QUIERAS" content={ask} id="ask-anything-footer"></FooterAskAnything>
+        <FooterDownloadApp title="APP DECATHLON" content={download}></FooterDownloadApp>
+        <FooterSocialNetworks title="REDES SOCIALES" content={socialNetworks}></FooterSocialNetworks>
+        <FooterPartner title="PARTNER" content={lemonway}></FooterPartner>
       </div>
       <SpanList list={spanList}></SpanList>
       <div className="terms">

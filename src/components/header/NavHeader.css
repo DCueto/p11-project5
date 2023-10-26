@@ -1,0 +1,31 @@
+
+.navHeader{
+  height: 100%;
+}
+
+.navHeader ul{
+  height: 100%;
+  display: flex;
+  gap: 44px;
+  font-size: 18px;
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+}
+
+.navHeader ul > li{
+  height: 100%;
+}
+
+.navHeader ul > li > a{
+  height: 99%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  box-sizing: content-box;
+}
+
+.navHeader ul > li > a:hover{
+  border-bottom: 3px solid #367CB7;
+  color: #367CB7;
+}
