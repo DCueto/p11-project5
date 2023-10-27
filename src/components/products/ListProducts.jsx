@@ -16,7 +16,7 @@ export default function ListProducts({urlFetch}){
 
     decaApi.fetchData(urlFetch)
       .then(data => {
-        
+
         let popularItems = data.sort(
           (i1, i2) => (i1.rate < i2.rate) ? 1 : (i1.rate > i2.rate) ? -1 : 0
         );
@@ -43,18 +43,20 @@ export default function ListProducts({urlFetch}){
       <h2>Productos destacados</h2>
       <div className="list-products-content">
       {
-        dataPosts.map( item =>
-          <article className="list-products-item" key={item.id}>
+        dataPosts.map( item => {
+          const {id, name, poster_img, price, brand} = item;
+
+          return <article className="list-products-item" key={id}>
             <figure className='list-products-item-img'>
-              <img src={item.poster_img} />
-              <span className='price-tag'>{item.price}€</span>
+              <img src={poster_img} />
+              <span className='price-tag'>{price}€</span>
             </figure>
             <div className="list-products-item-info">
-              <p className='list-products-item-info-brand'>{item.brand}</p>
-              <p className='list-products-item-info-model'>{item.name}</p>
+              <p className='list-products-item-info-brand'>{brand}</p>
+              <p className='list-products-item-info-model'>{name}</p>
             </div>
           </article>
-
+          }
         )
       }
       </div>

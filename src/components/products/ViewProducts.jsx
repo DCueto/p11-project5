@@ -41,17 +41,20 @@ function ViewProducts({fetchUrl, title}){
       <h1 className='viewProducts-h'>{title}</h1>
       <div className='products-container'>
       {
-        dataProducts.map((product, i) =>
-          <article data-id={product.id} className='product' key={product.id}>
+        dataProducts.map((product, i) => {
+          const {id, poster_img, price, brand, name} = product;
+
+          return <article data-id={id} className='product' key={id}>
             <figure className='product-img'>
-              <img src={product.poster_img} />
-              <span className='price-tag'>{product.price}€</span>
+              <img src={poster_img} />
+              <span className='price-tag'>{price}€</span>
             </figure>
             <div className="product-info">
-              <p className='product-info-brand'>{product.brand.toUpperCase()}</p>
-              <p className='product-info-model'>{product.name.toUpperCase()}</p>
+              <p className='product-info-brand'>{brand.toUpperCase()}</p>
+              <p className='product-info-model'>{name.toUpperCase()}</p>
             </div>
           </article>
+          }
         )
       }
 
