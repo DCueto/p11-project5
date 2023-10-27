@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import logo from './../../assets/img/decathlon-logo.svg';
 import './Header.css';
 
@@ -6,7 +8,8 @@ import NavHeader from './NavHeader';
 export default function Header(){
 
   const navItems = [
-    {text: "Deportes", link: "#"},
+    {text: "Home", link: "/"},
+    {text: "Deportes", link: "/sport"},
     {text: "Mujer", link: "#"},
     {text: "Hombre", link: "#"},
     {text: "Equipamiento", link: "#"},
@@ -18,7 +21,7 @@ export default function Header(){
   return (
 
   <header id="mainHeader">
-    <img src={logo} />
+    <Link to="/"><img src={logo} /></Link>
     <NavHeader items={navItems}/>
   </header>
 

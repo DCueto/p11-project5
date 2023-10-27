@@ -118,19 +118,19 @@ export default function Footer(){
   return (
     <footer className="main-footer">
       <div className="top-lists">
-        <FooterList title="DECATHLON EMPRESA" content={footerLinks1}></FooterList>
-        <FooterList title="COMPRA" content={footerLinks2}></FooterList>
-        <FooterList title="POST-COMPRA" content={footerLinks3}></FooterList>
-        <FooterList title="SERVICIOS" content={footerLinks4}></FooterList>
-        <FooterList title="VENTAJAS" content={footerLinks5}></FooterList>
+        <FooterList title="DECATHLON EMPRESA" content={footerLinks1} />
+        <FooterList title="COMPRA" content={footerLinks2} />
+        <FooterList title="POST-COMPRA" content={footerLinks3} />
+        <FooterList title="SERVICIOS" content={footerLinks4} />
+        <FooterList title="VENTAJAS" content={footerLinks5} />
       </div>
       <div className="bottom-lists">
-        <FooterAskAnything title="PREGÚNTANOS LO QUE QUIERAS" content={ask} id="ask-anything-footer"></FooterAskAnything>
-        <FooterDownloadApp title="APP DECATHLON" content={download}></FooterDownloadApp>
-        <FooterSocialNetworks title="REDES SOCIALES" content={socialNetworks}></FooterSocialNetworks>
-        <FooterPartner title="PARTNER" content={lemonway}></FooterPartner>
+        <FooterAskAnything title="PREGÚNTANOS LO QUE QUIERAS" content={ask} id="ask-anything-footer" />
+        <FooterDownloadApp title="APP DECATHLON" content={download} />
+        <FooterSocialNetworks title="REDES SOCIALES" content={socialNetworks} />
+        <FooterPartner title="PARTNER" content={lemonway} />
       </div>
-      <SpanList list={spanList}></SpanList>
+      <SpanList list={spanList} />
       <div className="terms">
         <p>*Consulta los métodos, plazos y gastos de envio disponibles en el siguiente enlace.</p>
         <p>**Los precios de venta de los artículos de nuestro catálogo incluyen IVA. Los precios para las entregas con destino a Canarias, Ceuta, Melilla y Andorra incluyen impuestos indirectos. Los precios de venta de los artículos de nuestro catálogo son los recomendados</p>

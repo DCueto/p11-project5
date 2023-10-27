@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './NavHeader.css';
 
 function NavHeader({items}){
@@ -6,7 +8,7 @@ function NavHeader({items}){
     <nav className="navHeader">
       <ul>
         {
-          items.map( (item, i) => <li key={i}><a href={item.link}>{item.text}</a></li> )
+          items.map( (item, i) => <li key={i}><Link to={item.link}>{item.text}</Link></li> )
         }
       </ul>
     </nav>

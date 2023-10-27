@@ -6,6 +6,13 @@ html{
   font-size: 9.6px !important;
 }
 
+h1{
+  font-size: 3.75rem;
+}
+
+h2{
+  font-size: 2.75rem;
+}
 
 :root {
   font-family: 'Roboto', 'Roboto Condensed', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
