@@ -1,7 +1,7 @@
 
 class DecathlonApi {
     constructor(){
-      this.baseUrl = 'http://localhost:3002';
+      this.baseUrl = 'https://deca-api-server-c2ce4a810fea.herokuapp.com';
     }
 
     async fetchData(path){
