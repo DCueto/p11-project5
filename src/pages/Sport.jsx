@@ -18,7 +18,7 @@ function Sport(){
   return (
     <>
       <PathNav ruta={pathItems} />
-      <ViewProducts fetchUrl='http://localhost:3002/articles' title="Bicicletas de niños e infantiles" />
+      <ViewProducts fetchUrl='articles' title="Bicicletas de niños e infantiles" />
     </>
   );
 }

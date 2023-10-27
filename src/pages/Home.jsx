@@ -13,7 +13,7 @@ function Home() {
         <section className="banner-container">
           <img className="banner" src={banner} />
         </section>
-        <ListProducts urlFetch="http://localhost:3002/articles" />
+        <ListProducts urlFetch="articles" />
       </main>
     </>
   )

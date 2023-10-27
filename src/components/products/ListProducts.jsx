@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import DecathlonApi from '../../DecathlonApi';
 
 import './ListProducts.css';
 
@@ -7,25 +8,24 @@ export default function ListProducts({urlFetch}){
 
   const [isLoading, setIsLoading] = useState(true);
   const [dataPosts, setDataPosts] = useState(null);
+  const [error, setError] = useState(null);
+  const decaApi = new DecathlonApi();
  
   useEffect( () => {
-    async function fetchData(URL){
-      try{
-        const request = await fetch(URL);
-        const response = await request.json();
 
-        let popularItems = response.sort(
+
+    decaApi.fetchData(urlFetch)
+      .then(data => {
+        
+        let popularItems = data.sort(
           (i1, i2) => (i1.rate < i2.rate) ? 1 : (i1.rate > i2.rate) ? -1 : 0
         );
 
         setDataPosts(popularItems.slice(0, 4));
-        setIsLoading(false);
-      } catch(error) {
-        console.log(error);
-      }
-    }
+      })
+      .catch(error => setError(error))
+      .finally(()=> setIsLoading(false));
 
-    fetchData(urlFetch);
   }, []);
 
 

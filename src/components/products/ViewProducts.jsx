@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import DecathlonApi from '../../DecathlonApi';
 
 import './ViewProducts.css';
 
@@ -6,30 +7,23 @@ function ViewProducts({fetchUrl, title}){
 
   const [isLoading, setIsLoading] = useState(true);
   const [dataProducts, setDataProducts] = useState(null);
+  const [error, setError] = useState(null);
+  const decaApi = new DecathlonApi();
+
 
   useEffect(()=>{
 
-    async function fetchData(url){
-      try{
-        const request = await fetch(url);
-        const response = await request.json();
+    decaApi.fetchData(fetchUrl)
+      .then(data => {
 
-        let filteredProducts = response.filter(product => {
+        let filteredProducts = data.filter(product => {
           return product.category == "Bicicletas de niños e infantiles";
         });
 
         setDataProducts(filteredProducts);
-        setIsLoading(false);
-
-        console.log(filteredProducts);
-
-      } catch(error){
-        console.log(error);
-      }
-
-    }
-
-    fetchData(fetchUrl);
+      })
+      .catch(error => setError(error))
+      .finally(()=> setIsLoading(false));
 
   }, []);
 
